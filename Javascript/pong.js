@@ -4,8 +4,8 @@ let terrain= new Terrain($("#terrain"));  //Créé le terrain
 
 let balle= new Balle($("#balle"));        //Créé la balle
 
-let joueur0 = new Joueur($("#Sgauche"))   //Créé les joueurs pour les scores
-let joueur1 = new Joueur($("#Sdroite"))
+let vie= new Vie($(".vie"));       //Créé la barre de vie
+let score= new Score($(".score")); //Créé le score
 
 let raquetteGauche=new Raquette($("#gauche")); //Créé les deux raquettes
 let raquetteDroite=new Raquette($("#droite"));
@@ -22,7 +22,10 @@ setInterval(function() //Créé une fonction qui s'exécute toute les 10 millise
         raquetteDroite.deplacement();
     }
     //Appelle des classes correspondant aux objets et de leur fonction
-
+    if(vie.compteur < 1 ) {
+        demarrer = false;
+        vie.compteur = 5;
+    }
 
 
 }, 10);
@@ -39,16 +42,16 @@ window.addEventListener("keydown", function (event) {
         return
     }
     event.preventDefault();
-    if (event.key === "a") {
+    if (event.key === "h") {
         raquetteGauche.monter();
     }
-    if (event.key === "q") {
+    if (event.key === "b") {
         raquetteGauche.descendre();
     }
-    if (event.key === "p") {
+    if (event.key === "b") {
         raquetteDroite.monter();
     }
-    if (event.key === "m") {
+    if (event.key === "h") {
         raquetteDroite.descendre();
     }
     event.preventDefault();
@@ -58,10 +61,10 @@ window.addEventListener("keyup", function (event) {
         return
     }
     event.preventDefault();
-    if (event.key === "a" || event.key === "q") {
+    if (event.key === "h" || event.key === "b") {
         raquetteGauche.arret();
     }
-    if (event.key === "p" || event.key === "m") {
+    if (event.key === "b" || event.key === "h") {
         raquetteDroite.arret();
     }
 }, true);

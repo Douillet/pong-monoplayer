@@ -10,7 +10,7 @@ class Raquette{
         
         
 
-        this.vitesse=10; //Vitesse de déplacement automatique de la raquette
+        this.vitesse=3; //Vitesse de déplacement automatique de la raquette
         this.direction=0; //+1 fait descendre, -1 fait monter
     }
 
