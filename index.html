@@ -1,0 +1,47 @@
+<html lang="fr">
+    <head>
+        <link rel="stylesheet" href="CSS/pong.css"/>
+        <title>Pong Pee Doo</title> <!-- Titre de page -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--importe la bibliothèque jQueries-->
+        
+    </head>
+    <body>
+        <div class="ecran-debut">
+            <div>
+                Joueur Gauche <br><br>
+                utilisez les touches <br><br>
+                <span class="touche">A</span> 
+                    et 
+                <span class="touche">Q</span> 
+            </div>
+            <div>
+                Joueur Droite <br><br>
+                utilisez les touches <br><br> 
+                <span class="touche">P</span> 
+                    et 
+                <span class="touche">M</span> 
+            </div>
+            <a id="btn-jouer" href="#" class="btn-jouer">JOUER</a>
+        </div>
+
+
+        <div id="terrain"> <!-- Fait appel a "terrain" grâce à son identifiant -->
+            <div id="balle"> </div> <!-- Fait appel a "balle" au sein de "terrain" grâce à son identifiant -->
+            <div id="gauche" class="raquette"></div> <!-- construit une raquette à gauche au sein de "terrain" grâce à son identifiant -->
+            <div id="droite" class="raquette"></div> <!-- construit une raquette à droite au sein de "terrain" grâce à son identifiant -->
+            <div id="score_barre"> </div> <!-- fait apparaître une barre séparant les scores-->
+            <div class="score">
+                <div id="Sgauche" class="scoreG">0</div>
+                <div id="Sdroite" class="scoreD">0</div>
+            </div>
+        </div>
+    
+    </body>
+    <script src="Javascript/Joueur.js"></script>
+    <script src="Javascript/Terrain.js"></script> <!-- Fait appel aux fichiers js-->
+    <script src="Javascript/Balle.js"></script>
+    <script src="Javascript/Raquette.js"></script>
+    <script src="Javascript/pong.js"></script> 
+    
+
+</html>

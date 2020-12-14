@@ -1,0 +1,181 @@
+body{
+    background-color: #ffffff;
+    color: #fff;
+    font-family: monospace;
+
+    /** Centre les éléments au centre de la page **/
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+#terrain{
+    position: relative;
+    border-top: 1px solid deeppink; /** Rends la bordure supérieur et inférieure visibles et de couleur blanche. **/
+    border-bottom: 1px solid deeppink;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+
+    /** Dimension du terrain **/
+    width: 800px;
+    height: 400px;
+
+}
+
+.tiltHaut {
+    border-top-color: saddlebrown !important;
+}
+
+.tiltBas {
+    border-bottom-color: saddlebrown !important;
+}
+.tiltGauche {
+    border-left-color: palevioletred !important;
+}
+
+.tiltDroite {
+    border-right-color: palevioletred !important;
+}
+
+#balle{
+    position: absolute;
+    top: 50%; /** Mets la balle au centre de l'écran en hauteur **/
+    left: 50%; /** Mets la balle au centre de l'écran en largeur **/
+
+    /** Dimension, couleur et arrondi des angles du carré qui devient un cercle (la balle) **/
+    width: 20px;
+    height: 20px;
+    background-color: deeppink;
+    border-radius: 100%;
+}
+
+.raquette
+{
+    position: absolute; /**Position de la raquette sur l'axe Y, la postion de la raquette sur l'axe X se fera sur #droite et #gauche**/
+    top: 40%;
+    
+
+    width: 10px; /**Taille de la Raquette**/
+    height: 25%;
+    background-color: deeppink;
+}
+#droite
+{
+    right: 1%; /**placé au bord droit**/
+
+}
+
+.tiltRaquetteDroite {
+    background-color: lightpink !important; /*important permet de mettre la couleur donnée par dessus les autres*/
+}
+
+#gauche
+{
+    left: 1%; /**placé au bord gauche**/
+}
+
+.tiltRaquetteGauche {
+    background-color: lightpink !important;
+}
+
+#score_barre {
+    background-color: #fff;
+    position: absolute;
+    width: 3px;
+    height: 140px;
+    top: 10%;
+    left: 50%;
+    opacity: 0.5;
+}
+
+.score {
+    display: flex;
+}
+
+.scoreG{
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: aqua;
+    opacity: 0.6;
+}
+.scoreD{
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: orange;
+    opacity: 0.6;
+}
+
+.ecran-debut{
+    transition: all 2s;   /**transition en fondu de tous les éléments du menu**/
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 3;   /** Mets le menu au premier plan**/
+    top: -15%;    /** décale le menu légèrement vers le haut**/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+
+    transition-duration: 1s;
+    will-change: opacity, filter;
+    opacity: 1;
+    filter: blur(0px);
+}
+.ecran-debut>*{
+    margin: 10px;
+}
+.ecran-debut .touche{
+    display: inline-flex;
+}
+
+/* disparition de l'écran de début */
+
+.ecran-debut.invisible{
+    pointer-events: none;
+    opacity: 0;
+    filter: blur(16px);
+}
+
+/*Bouton de l'écran de démarrage*/
+
+.btn-jouer {
+    box-shadow:inset 0px 1px 6px 2px #fce2c1;
+    background:linear-gradient(to bottom, #ffa230 5%, #fa8c05 100%);
+    background-color:#ffa230;
+    border-radius:6px;
+    border:1px solid #ffa200;
+    display:inline-block;
+    cursor:pointer;
+    color:#0f0d0f;
+    font-family:Trebuchet MS;
+    font-size:18px;
+    font-weight:bold;
+    padding:11px 24px;
+    text-decoration:none;
+    text-shadow:0px 3px 0px #ff9d00;
+}
+.btn-jouer:hover {
+    background:linear-gradient(to bottom, #fa8c05 5%, #ffa230 100%);
+    background-color:#fa8c05;
+}
+.btn-jouer:active {
+    position:relative;
+    top:1px;
+}
